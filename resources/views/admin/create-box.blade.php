@@ -1,4 +1,4 @@
-@extends('/components/layouts.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="flex items-center justify-center py-12">
