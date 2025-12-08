@@ -10,14 +10,16 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('boxes', function (Blueprint $table) {
-            $table->id();
-            $table->string('image');
-            $table->string('name');
-            $table->softDeletes();
-            $table->timestamps();
-        });
+        {
+            Schema::create('boxes', function (Blueprint $table) {
+                $table->id();
+                $table->unsignedBigInteger('user_id');
+                $table->string('image');
+                $table->string('name');
+                $table->softDeletes();
+                $table->timestamps();
+                $table->foreign('user_id')->references('id')->on('users');
+            });
     }
 
     /**

@@ -5,35 +5,31 @@
     <title>@yield('title', 'Suggestion Box')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {{-- Vite / Mix --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-base-200 min-h-screen">
     <div class="min-h-screen flex flex-col">
 
-        {{-- Top Navbar (used on “inside” pages) --}}
-        @hasSection('navbar')
-            <div class="navbar p-3 bg-base-100 shadow">
-                <div class="justify-left">
-                    <a href="{{ route('dashboard') }}"
-                       class="text-xl flex items-center gap-2">
-                        <span>Suggestion Box</span>
-                    </a>
-                </div>
+        <div class="navbar p-3 bg-base-100 border-b-1">
+            <div class="flex-1 justify-left">
+                <a href="{{ route('dashboard') }}"
+                    class="text-xl flex items-center gap-2">
+                    <span>Suggestion Box</span>
+                </a>
+            </div>
 
-                <div class="flex justify-right">
-                    <ul class="menu menu-horizontal px-1">
-                        @yield('navbar')
-                    </ul>
+            <div class="flex-none">
+                <div class="flex items-center">
+                    <a href="{{ route('boxes.create') }}" class="link no-underline font-semibold border-primary">Create Box</a>
                     <form method="POST" action="#">
                         @csrf
-                        <button class="btn btn-ghost btn-circle ml-2" type="button">
+                        <button class="btn btn-ghost" type="button">
                             Logout
                         </button>
                     </form>
                 </div>
             </div>
-        @endif
+        </div>
 
         <main class="flex-1">
             @yield('content')

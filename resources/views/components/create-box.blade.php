@@ -1,9 +1,4 @@
-@extends('layouts.app')
-
-@section('title', 'Create Box')
-
-@section('content')
-<div class="w-full max-w-xl mx-auto px-4">
+{{-- <div class="w-full max-w-xl mx-auto px-4"> --}}
     <div class="card bg-base-100 shadow-xl border border-base-300 rounded-3xl">
         <div class="card-body">
             <h2 class="card-title justify-center mb-4">CREATE BOX</h2>
@@ -28,11 +23,16 @@
                     </div>
                 </div>
 
-                <div class="form-control pt-4">
-                    <button class="btn btn-primary mx-auto px-10">CREATE</button>
+                <div class="flex pt-4">
+                    <div class="form-control">
+                        <button class="btn btn-soft btn-outline">Close</button>
+                    </div>
+
+                    <div class="form-control">
+                        <button class="btn btn-primary mx-auto px-10">CREATE</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
-</div>
-@endsection
+{{-- </div> --}}

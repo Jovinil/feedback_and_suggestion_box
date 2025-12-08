@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('title', 'Login')
 
 @section('content')
 <div class="w-full max-w-md">
-    <div class="card bg-base-100 shadow-xl">
+    <div class="card shadow-xl">
         <div class="card-body space-y-4">
             <h2 class="card-title justify-center">Login</h2>
 
@@ -34,7 +34,7 @@
 
             <p class="text-center text-sm mt-3">
                 Don’t have an account?
-                <a href="" class="link link-primary">Register</a>
+                <a href="{{ route('register') }}" class="link link-primary">Register</a>
             </p>
         </div>
     </div>

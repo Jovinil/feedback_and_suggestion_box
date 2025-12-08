@@ -2,22 +2,17 @@
 
 @section('title', 'Dashboard')
 
-@section('navbar')
-    <li><a href="{{ route('dashboard') }}" class="font-semibold border-b-2 border-primary">DASHBOARD</a></li>
-    <li><a href="{{ route('boxes.create') }}">CREATE BOX</a></li>
-@endsection
-
 @section('content')
 <div class="w-full px-0">
     {{-- card fills the viewport below the navbar (navbar ≈ 4rem height) --}}
-    <div class="card bg-base-100 shadow-xl rounded-none min-h-[calc(100vh-4rem)]">
+    <div class="card bg-base-100 rounded-none min-h-[calc(100vh-4rem)]">
         <div class="card-body flex flex-col">
 
             {{-- main scrollable area takes all remaining height --}}
             <div class="flex-1">
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 h-full overflow-y-auto border border-base-300 p-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 h-full shadow-lg overflow-y-auto p-4">
                     @foreach(range(1,12) as $i)
-                        <div class="card card-compact bg-base-100 border border-base-300">
+                        <div class="card card-compact shadow-md bg-base-100">
                             <figure class="bg-base-200 h-24"></figure>
                             <div class="card-body p-3">
                                 <h3 class="font-semibold text-sm">Name {{ $i }}</h3>
@@ -39,4 +34,5 @@
         </div>
     </div>
 </div>
+
 @endsection

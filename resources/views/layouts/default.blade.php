@@ -6,9 +6,9 @@
   <title>Feedback and Suggesstion Box</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="antialiased bg-slate-50 text-slate-800">
+<body class="antialiased bg-base-100 text-slate-800">
   <div class="min-h-screen flex items-center justify-center">
-    {{ $slot ?? $content ?? '' }}
+    @yield('content')
   </div>
 </body>
 </html>

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('content');
             $table->softDeletes();
             $table->timestamps();
-            $table->foreign('feedbacks_and_suggestions_id')->references('id')->on('feedbacks_and_suggestions')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('feedbacks_and_suggestions_id')->references('id')->on('feedbacks_and_suggestions');
+            $table->foreign('user_id')->references('id')->on('users');
 
         });
 
